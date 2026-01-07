@@ -343,6 +343,17 @@ ul {
     object-fit: cover;
 }
 
+@keyframes heroFadeUp {
+    from {
+    opacity: 0;
+    transform: translateY(18px);
+}
+    to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*  Flash Sale Trip  */
 .flash-strip {
     margin-top: 1.4rem;
@@ -368,18 +379,6 @@ ul {
 
 .flash-strip__text {
     color: var(--clr-muted)
-}
-
-/*  Keyframe Animation */
-@keyframes heroFadeUp {
-    from {
-    opacity: 0;
-    transform: translateY(18px);
-}
-    to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ======= MAIN LAYOUT: SIDEBAR + GRID ======= */
@@ -655,4 +654,86 @@ ul {
     .contact__form {
         grid-template-columns: 1fr;
     }
+}
+
+/* ====== GLOBAL FADE-UP ANIMATION ====== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.45s;
+}
+
+/* ====== AUTH PAGES (LOGIN / SIGNUP) ======  */
+
+.auth-wrapper {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem 1.5rem; 
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 1.8rem;
+    padding: 2.2rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin-top: 1.5rem;
+}   
+
+.auth-card h1 {
+    margin-bottom: 0.3rem;
+}
+
+.auth-subtitle {
+    font-size: 0.9rem;
+    color: var(--clr-muted);
+    margin-bottom: 1.8rem;
+}
+
+.auth-form {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.btn--full {
+    width: 100%;
+    margin-top: 0.6rem;
+}
+
+.auth-footer {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--clr-muted);
+}
+
+.auth-footer a {
+    color: var(--clr-primary);
+    font-weight: 600;
 }
